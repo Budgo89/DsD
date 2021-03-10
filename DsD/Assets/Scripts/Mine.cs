@@ -5,24 +5,8 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     [SerializeField] public int _damage;
-
-    //void OnTriggerEnter(Collider other)
-    //{
-        //// Когда в область тригера попадает что то
-        //print("Ouch:");
-        //if (other.gameObject.tag == "Enemy")
-        //{ // Если это ядро
-        //    //Goal.goalMet = true;
-        //    //// Изменить альфа канал (увелич. непрозрачность)
-        //    //Material mat = GetComponent<Renderer>().material;
-        //    //Color c = mat.color;
-        //    //c.a = 1;
-        //    //mat.color = c;
-        //    print("Ouch:");
-        //}
-    //}
-
-
+    [SerializeField]
+    private GameObject _min;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,6 +17,7 @@ public class Mine : MonoBehaviour
             var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
             Destroy(gameObject);
+            _min.SetActive(false);
         }
 
 
