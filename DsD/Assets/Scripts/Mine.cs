@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [SerializeField] public int _damage;
+    [SerializeField] 
+    public int _damage;
     [SerializeField]
     private GameObject _min;
 
