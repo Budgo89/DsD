@@ -5,19 +5,8 @@ using UnityEngine;
 public class MyEnemy : MonoBehaviour
 {
     [SerializeField]
-    public int _health = 1;
+    public int _health;
 
-    //private void Update()
-    //{
-    //    print("Ouch:" + 1);
-
-    //    _health -= 1; ;
-
-    //    if (_health <= 0)
-    //    {
-    //        Die();            
-    //    }
-    //}
     public void Hurt(int damage)
     {
         print("Ouch:" +damage);
