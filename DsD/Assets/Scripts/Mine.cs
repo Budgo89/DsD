@@ -8,7 +8,7 @@ public class Mine : MonoBehaviour
     public int _damage;
     [SerializeField]
     private GameObject _min;
-
+    public GameObject explosion;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -19,10 +19,9 @@ public class Mine : MonoBehaviour
             enemy.Hurt(_damage);
             Destroy(gameObject);
             _min.SetActive(false);
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
-
-
-
-    }
-
+      }
+   
 }
