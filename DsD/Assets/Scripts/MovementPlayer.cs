@@ -11,6 +11,8 @@ public class MovementPlayer : MonoBehaviour
     // Скорость прыжка персонажа
     [SerializeField]
     private float _jumpSpeed;
+    [SerializeField]
+    private Transform _mobTransform;
     // Гравитация
     private float gravity = 20.0f;
     // переменная движения персонажа
@@ -25,21 +27,25 @@ public class MovementPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (controller.isGrounded)
+        if (_mobTransform != null)
         {
-            moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDir = transform.TransformDirection(moveDir);
-            moveDir *= _speed; 
+            if (controller.isGrounded)
+            {
+                moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+                moveDir = transform.TransformDirection(moveDir);
+                moveDir *= _speed;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+            {
+                moveDir.y = _jumpSpeed;
+            }
+
+            moveDir.y -= gravity * Time.deltaTime;
+
+            controller.Move(moveDir * Time.deltaTime);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
-        {
-            moveDir.y = _jumpSpeed;
-        }
-
-        moveDir.y -= gravity * Time.deltaTime;
-
-        controller.Move(moveDir * Time.deltaTime);
 
     }
 

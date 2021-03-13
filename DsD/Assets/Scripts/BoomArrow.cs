@@ -10,8 +10,11 @@ public class BoomArrow : MonoBehaviour
     public float speed = 4;
     [SerializeField]
     public Transform _arrowSpavner;
-    // Update is called once per frame
-    void Update()
+    //private void Start()
+    //{
+    //    gameObject.GetComponent<BoomArrow>().enabled = false;
+    //}
+    public void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {

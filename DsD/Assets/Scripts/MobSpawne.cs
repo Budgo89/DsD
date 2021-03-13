@@ -9,18 +9,21 @@ public class MobSpawne : MonoBehaviour
     [SerializeField]
     private GameObject _spavn;
 
+    //[SerializeField]
+    //private Transform _pointSpawner;
+    //Дверь
     [SerializeField]
-    private Transform _pointSpawner;
-
+    private GameObject _Door;
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {        
-            print("Ouch:");
+            print("ПОЯВИЛСЯ БОСС");
         if (other.gameObject.CompareTag("Enemy"))
-        {
-            print("Ouch:");
-            Instantiate(_mob, _pointSpawner.position, _pointSpawner.rotation);
+        {            
+            //Instantiate(_mob, _pointSpawner.position, _pointSpawner.rotation);
             _spavn.SetActive(false);
+            _Door.SetActive(false);
+            _mob.SetActive(true);
         }
     }
 }
