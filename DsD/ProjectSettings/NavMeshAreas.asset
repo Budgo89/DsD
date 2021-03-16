@@ -11,12 +11,12 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
+  - name: Lava
+    cost: 9
+  - name: Trava
     cost: 1
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
+  - name: Voda
+    cost: 3
   - name: 
     cost: 1
   - name: 
