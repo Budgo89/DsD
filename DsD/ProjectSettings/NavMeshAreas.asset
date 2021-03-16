@@ -12,11 +12,11 @@ NavMeshProjectSettings:
   - name: Jump
     cost: 2
   - name: Lava
-    cost: 9
+    cost: 10
   - name: Trava
     cost: 1
   - name: Voda
-    cost: 3
+    cost: 5
   - name: 
     cost: 1
   - name: 
@@ -69,7 +69,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-  m_LastAgentTypeID: -887442657
+  m_LastAgentTypeID: 1479372276
   m_Settings:
   - serializedVersion: 2
     agentTypeID: 0
