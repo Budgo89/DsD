@@ -2,26 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyEnemy : MonoBehaviour
+public class MyEnemy : MobDie
 {
-    [SerializeField]
-    public int _health;
-
-    public void Hurt(int damage)
-    {
-        print("Ouch:" +damage);
-
-        _health -= damage; ;
-
-        if (_health <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
 
 }

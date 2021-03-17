@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mobTurel : MonoBehaviour
+public class MobTurel : MonoBehaviour
 {
     [SerializeField]
     private Transform _player;
@@ -21,16 +21,13 @@ public class mobTurel : MonoBehaviour
     private Transform _arrowSpavner;
     [SerializeField]
     private float _reloadTimer = 30f; //задержка между выстрелами, изменяемое значение
-    float reloadTimer;
-
-    // Start is called before the first frame update
+    private float reloadTimer;
     void Start()
     {
         InvokeRepeating("damagArrow(_radius, _distance)", 0, 5);
         reloadTimer = _reloadTimer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_player != null)
@@ -38,8 +35,8 @@ public class mobTurel : MonoBehaviour
             _distance = Vector3.Distance(_player.position, transform.position);
             if (_distance <= _radius)
             {
-                Vector3 relativePos = _player.position - transform.position;
-                Quaternion rotation = Quaternion.LookRotation(relativePos);
+                var relativePos = _player.position - transform.position;
+                var rotation = Quaternion.LookRotation(relativePos);
                 transform.rotation = rotation;
                 if (reloadTimer > 0) reloadTimer -= Time.deltaTime; //если таймер перезарядки больше нуля - отнимаем его
                 if (reloadTimer < 0)
@@ -48,11 +45,8 @@ public class mobTurel : MonoBehaviour
                     damagArrow(_radius, _distance);
 
                 }
-                //print(reloadTimer);
-
             }
         }
-
     }
 
     private void damagArrow(float _radius, float _distance)
@@ -61,9 +55,6 @@ public class mobTurel : MonoBehaviour
         {
             Rigidbody p = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
             p.velocity = transform.forward * speedArrow;
-
         }
-
     }
-
 }

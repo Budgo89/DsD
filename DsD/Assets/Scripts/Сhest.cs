@@ -22,19 +22,13 @@ public class Сhest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.GetComponent<MyEnemy>())
         {
             _сhest.SetActive(false);
             _arrows.SetActive(false);
             _bows.SetActive(false);
             _bow.SetActive(true);
             _player.GetComponent<BoomArrow>().enabled = true;
-            //gameObject.GetComponent<BoomArrow>().enabled = true;
-            //var BoomArrow = gameObject.GetComponent<BoomArrow>();
-            //BoomArrow.enabled = true;
-            // arrowHit. (_damage);
-            //BoomArrow._damage = 1;
-
         }
 
     }

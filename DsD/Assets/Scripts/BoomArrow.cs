@@ -10,10 +10,7 @@ public class BoomArrow : MonoBehaviour
     public float speed = 4;
     [SerializeField]
     public Transform _arrowSpavner;
-    //private void Start()
-    //{
-    //    gameObject.GetComponent<BoomArrow>().enabled = false;
-    //}
+   
     public void Update()
     {
         if (Input.GetButtonDown("Fire1"))

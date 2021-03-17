@@ -2,24 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class arrowHit : MonoBehaviour
+public class ArrowHit : MonoBehaviour
 {
-    //public int _damage;
-
     [SerializeField]
     public int _damage;
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Mob"))
-            print("Попадание");
-        if (other.tag == "Mob")
+        if (other.gameObject.GetComponent<MobKill>())
         {
+             print("Попадание");
             print("Урон");
             var enemy = other.GetComponent<MobKill>();
             enemy.Hurt(_damage);
-            Destroy(gameObject);
             gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
