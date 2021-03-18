@@ -9,6 +9,14 @@ public class ArrowHit : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        if (GameObject.Find("bowPlayer") == true)
+        {
+            _damage = 1;
+        }
+        else if (GameObject.Find("bowBissPlayer") == true)
+        {
+            _damage = 3;
+        }
         if (other.gameObject.GetComponent<MobKill>())
         {
              print("Попадание");
