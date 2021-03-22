@@ -9,7 +9,7 @@ public class MobTurel : MonoBehaviour
     // радиус стрельбы
     [SerializeField]
     private float _radius;
-    private float _distance;
+    public float _distance;
 
     [SerializeField]
     private Rigidbody projectile;
@@ -24,7 +24,7 @@ public class MobTurel : MonoBehaviour
     private float reloadTimer;
     void Start()
     {
-        InvokeRepeating("damagArrow(_radius, _distance)", 0, 5);
+        // InvokeRepeating("damagArrow(_radius, _distance)", 0, 5);
         reloadTimer = _reloadTimer;
     }
 

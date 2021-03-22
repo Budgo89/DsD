@@ -11,7 +11,7 @@ public class ArrowHitMob : MonoBehaviour
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
-            print("Попадание");
+           
             print("Урон");
             var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
