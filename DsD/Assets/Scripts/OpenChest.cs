@@ -17,13 +17,10 @@ public class OpenChest : MonoBehaviour
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
-            //_сhest.SetActive(false);
+
             var openChest =_animator.GetBool("OpenChest");
             _animator.SetBool("OpenChest", true);
-            // _arrows.SetActive(false);
-            // _bows.SetActive(false);
-            // _bow.SetActive(true);
-            // _player.GetComponent<BoomArrow>().enabled = true;
+
         }
 
     }
