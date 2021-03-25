@@ -17,11 +17,11 @@ public class ArrowHit : MonoBehaviour
         {
             _damage = 3;
         }
-        if (other.gameObject.GetComponent<MobKill>())
+        var enemy = other.GetComponent<MobKill>();
+        if (enemy != null)
         {
-             print("Попадание");
+            print("Попадание");
             print("Урон");
-            var enemy = other.GetComponent<MobKill>();
             enemy.Hurt(_damage);
             gameObject.SetActive(false);
             Destroy(gameObject);

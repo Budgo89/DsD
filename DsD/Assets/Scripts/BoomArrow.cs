@@ -15,8 +15,8 @@ public class BoomArrow : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Rigidbody p = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
-            p.velocity = transform.forward * speed;
+            Rigidbody position = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
+            position.velocity = transform.forward * speed;
         }
     }
 }

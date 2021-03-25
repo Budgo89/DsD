@@ -10,7 +10,6 @@ public class Mine : MonoBehaviour
     [SerializeField]
     private GameObject _min;
     public GameObject _explosion;
-    private float reloadTimer = 5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,10 +18,10 @@ public class Mine : MonoBehaviour
             print("Ouch:");
             var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
-            Destroy(gameObject);
             _min.SetActive(false);
             _explosion.SetActive(true);
             _explosion.GetComponent<StopBoom>().enabled = true;
+            Destroy(gameObject);
         }
     }
 

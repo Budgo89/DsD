@@ -18,12 +18,15 @@ public class Сhest : MonoBehaviour
     [SerializeField] private GameObject _player;
 
     [SerializeField] private GameObject _obl;
+    [SerializeField] private GameObject _door;
     
     private Animator _animator;
+    private Animator _animatorDoor;
     
     private void Awake()
     {
         _animator = _сhest.gameObject.GetComponent<Animator>();
+        _animatorDoor = _door.GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -35,6 +38,7 @@ public class Сhest : MonoBehaviour
             _bow.SetActive(true);
             _player.GetComponent<BoomArrow>().enabled = true;
             _obl.SetActive(false);
+            _animatorDoor.SetTrigger("OpenDoor");
         }
 
     }

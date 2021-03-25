@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class MobTurel : MonoBehaviour
 {
-    [SerializeField]
-    private Transform _player;
+    [SerializeField] private Transform _player;
     // радиус стрельбы
-    [SerializeField]
-    private float _radius;
-    public float _distance;
+    [SerializeField] private float _radius;
+    [SerializeField] private float _distance;
 
-    [SerializeField]
-    private Rigidbody projectile;
-    [SerializeField]
+    [SerializeField] private Rigidbody projectile;
     //скорость стрел
-    private float speedArrow = 4;
-    [SerializeField]
+    [SerializeField] private float speedArrow = 4;
     //зона появления стрел
-    private Transform _arrowSpavner;
-    [SerializeField]
-    private float _reloadTimer = 30f; //задержка между выстрелами, изменяемое значение
+    [SerializeField] private Transform _arrowSpavner;
+    [SerializeField] private float _reloadTimer = 30f; //задержка между выстрелами, изменяемое значение
     private float reloadTimer;
     void Start()
     {
@@ -42,14 +36,14 @@ public class MobTurel : MonoBehaviour
                 if (reloadTimer < 0)
                 {
                     reloadTimer = _reloadTimer;
-                    damagArrow(_radius, _distance);
+                    DamagArrow(_radius, _distance);
 
                 }
             }
         }
     }
 
-    private void damagArrow(float _radius, float _distance)
+    private void DamagArrow(float _radius, float _distance)
     {
         if (_distance < _radius)
         {

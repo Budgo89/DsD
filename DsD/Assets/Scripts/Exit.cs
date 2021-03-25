@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour
 {
+    [SerializeField] private GameObject _exit;
     private void OnTriggerEnter(Collider other)
     {
-        print("УРОВЕНЬ ПРОЙДЕН! Уровень 2 в разроботке");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _exit.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+        // print("УРОВЕНЬ ПРОЙДЕН! Уровень 2 в разроботке");
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
     }
 }

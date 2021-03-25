@@ -9,15 +9,13 @@ public class ArrowHitMob : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<MyEnemy>())
+        var enemy = other.GetComponent<MyEnemy>();
+        if (enemy != null)
         {
-           
             print("Урон");
-            var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
             Destroy(gameObject);
             gameObject.SetActive(false);
         }
-
     }
 }

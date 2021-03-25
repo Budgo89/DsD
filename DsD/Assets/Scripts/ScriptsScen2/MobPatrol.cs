@@ -8,7 +8,7 @@ public class MobPatrol : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public Transform[] waypoints;
 
-    int m_CurrentWaypointIndex;
+    public int m_CurrentWaypointIndex;
 
     void Start ()
     {
