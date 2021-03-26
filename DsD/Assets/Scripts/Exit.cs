@@ -13,8 +13,5 @@ public class Exit : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
-        // print("УРОВЕНЬ ПРОЙДЕН! Уровень 2 в разроботке");
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
     }
 }

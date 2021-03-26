@@ -6,15 +6,12 @@ using UnityEngine;
 public class MovementPlayer : MonoBehaviour
 {
     // Скорость персонажа
-    [SerializeField]
-    private float _speed;
+    [SerializeField] private float _speed;
     // Скорость прыжка персонажа
-    [SerializeField]
-    private float _jumpSpeed;
-    [SerializeField]
-    private Transform _mobTransform;
+    [SerializeField] private float _jumpSpeed;
+    [SerializeField] private Transform _mobTransform;
     // Гравитация
-    private float gravity = 20.0f;
+    private float gravity = 15f;
     // переменная движения персонажа
     private Vector3 moveDir = Vector3.zero;
     //переменная содержащая компонент CharacterController
@@ -25,7 +22,7 @@ public class MovementPlayer : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_mobTransform != null)
         {

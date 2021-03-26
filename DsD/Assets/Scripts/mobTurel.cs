@@ -37,7 +37,6 @@ public class MobTurel : MonoBehaviour
                 {
                     reloadTimer = _reloadTimer;
                     DamagArrow(_radius, _distance);
-
                 }
             }
         }

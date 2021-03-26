@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OpenDoorЕ : MonoBehaviour
@@ -9,11 +10,11 @@ public class OpenDoorЕ : MonoBehaviour
     //Дверь
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _Light;
+    [SerializeField] private TMP_Text _hinr;
 
 
     private Animator _animator;
     private Animator _animatorLight;
-    
     private void Awake()
     {
         _animator = _door.gameObject.GetComponent<Animator>();
@@ -23,11 +24,19 @@ public class OpenDoorЕ : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            print("ПОЯВИЛСЯ БОСС");
+            _hinr.text = "ПОЯВИЛСЯ БОСС";
             _spawn.SetActive(false);
             _animator.SetTrigger("OpenDoor");
             _animatorLight.SetTrigger("OpenLight");
             _mob.SetActive(true);
+            Invoke("TimeOff",5.0f);
         }
+
     }
+
+    private void TimeOff()
+    {
+        _hinr.text = " ";
+    }
+
 }

@@ -42,8 +42,6 @@ public class MouseLook : MonoBehaviour
         if (GetComponent<Rigidbody>())
             GetComponent<Rigidbody>().freezeRotation = true;     
         originalRotation = transform.localRotation;
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
     }
 
     public static float ClampAngle (float angle, float min, float max)
@@ -52,9 +50,6 @@ public class MouseLook : MonoBehaviour
         if (angle > 360f) angle -= 360f;
         return Mathf.Clamp(angle, min, max);
     }
-
-
-    // Update is called once per frame
     void Update()
     {
         if (_mobTransform != null)

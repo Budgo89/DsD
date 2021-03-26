@@ -4,25 +4,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TakeKey : MonoBehaviour
+public class Hint1 : MonoBehaviour
 {
-    [SerializeField] private GameObject _key;
-    [SerializeField] private GameObject _zoon;
     [SerializeField] private TMP_Text _hinr;
+
+    [SerializeField] private GameObject _zone;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
-            _key.SetActive(false);
-            _hinr.text = "Вы подобрали ключ. Найдите дверь.";
+            _hinr.text = "Подойдете к сундуку и возьмете оружие";
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _hinr.text = " ";
-        _zoon.SetActive(false);
+        if (other.gameObject.GetComponent<MyEnemy>())
+        {
+            _hinr.text = " ";
+            _zone.SetActive(false);
+        }
     }
 }
-

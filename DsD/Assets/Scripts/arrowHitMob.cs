@@ -14,6 +14,7 @@ public class ArrowHitMob : MonoBehaviour
         {
             print("Урон");
             enemy.Hurt(_damage);
+            enemy.HP(_damage);
             Destroy(gameObject);
             gameObject.SetActive(false);
         }

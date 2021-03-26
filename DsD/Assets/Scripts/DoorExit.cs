@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DoorExit : MonoBehaviour
@@ -8,6 +9,7 @@ public class DoorExit : MonoBehaviour
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _key;
     [SerializeField] private GameObject _zoon;
+    [SerializeField] private TMP_Text _hinr;
     
     private Animator _animator;
 
@@ -21,17 +23,20 @@ public class DoorExit : MonoBehaviour
         {
             if (_key.activeSelf == false)
             {
-                // _door.SetActive(false);
+                _hinr.text = "Дверь открыта";
                 _zoon.SetActive(false);
-                print("ДВЕРЬ ОТКРЫТА");
                 _animator.SetTrigger("OpenDoor");
                 
             }
             else
             {
-                print("НАЙДИТЕ КЛЮЧ");
+                _hinr.text = "Найдите ключ";
             }
         }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        _hinr.text = " ";
     }
 }

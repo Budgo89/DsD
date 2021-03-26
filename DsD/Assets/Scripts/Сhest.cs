@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 public class Сhest : MonoBehaviour
@@ -20,6 +21,8 @@ public class Сhest : MonoBehaviour
     [SerializeField] private GameObject _obl;
     [SerializeField] private GameObject _door;
     
+    [SerializeField] private TMP_Text _hinr;
+    
     private Animator _animator;
     private Animator _animatorDoor;
     
@@ -32,14 +35,19 @@ public class Сhest : MonoBehaviour
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
+            _hinr.text = "Стоит осмотреться перед тем как идти дальше";
             _animator.SetTrigger("OpenChest");
             _arrows.SetActive(false);
             _bows.SetActive(false);
             _bow.SetActive(true);
             _player.GetComponent<BoomArrow>().enabled = true;
-            _obl.SetActive(false);
             _animatorDoor.SetTrigger("OpenDoor");
         }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        _hinr.text = " ";
+        _obl.SetActive(false);
     }
 }
