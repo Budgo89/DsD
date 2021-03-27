@@ -20,6 +20,7 @@ public class Сhest : MonoBehaviour
 
     [SerializeField] private GameObject _obl;
     [SerializeField] private GameObject _door;
+    [SerializeField] private GameObject _bowInterface;
     
     [SerializeField] private TMP_Text _hinr;
     
@@ -35,13 +36,14 @@ public class Сhest : MonoBehaviour
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
-            _hinr.text = "Стоит осмотреться перед тем как идти дальше";
+            _hinr.text = "Вы получили лук, но стоит осмотреться перед тем как идти дальше";
             _animator.SetTrigger("OpenChest");
             _arrows.SetActive(false);
             _bows.SetActive(false);
             _bow.SetActive(true);
             _player.GetComponent<BoomArrow>().enabled = true;
             _animatorDoor.SetTrigger("OpenDoor");
+            _bowInterface.SetActive(true);
         }
     }
 
