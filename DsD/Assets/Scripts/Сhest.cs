@@ -21,6 +21,8 @@ public class Сhest : MonoBehaviour
     [SerializeField] private GameObject _obl;
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _bowInterface;
+    [SerializeField] private GameObject _bowPlayer;
+    [SerializeField] private GameObject _aim;
     
     [SerializeField] private TMP_Text _hinr;
     
@@ -44,6 +46,8 @@ public class Сhest : MonoBehaviour
             _player.GetComponent<BoomArrow>().enabled = true;
             _animatorDoor.SetTrigger("OpenDoor");
             _bowInterface.SetActive(true);
+            _bowPlayer.SetActive(true);
+            _aim.SetActive(true);
         }
     }
 

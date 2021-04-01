@@ -16,10 +16,12 @@ public class MovementPlayer : MonoBehaviour
     private Vector3 moveDir = Vector3.zero;
     //переменная содержащая компонент CharacterController
     private CharacterController controller;
+    private Animator _anim;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,7 +36,11 @@ public class MovementPlayer : MonoBehaviour
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+            {
                 moveDir.y = _jumpSpeed;
+                _anim.SetTrigger("Jump");
+            }
+                
 
             moveDir.y -= gravity * Time.deltaTime;
 

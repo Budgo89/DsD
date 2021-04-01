@@ -6,6 +6,5 @@ using UnityEngine.UI;
 
 public class MyEnemy : MobDie
 {
-    
 
 }

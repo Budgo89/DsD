@@ -6,8 +6,8 @@ public class MobTurel : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     // радиус стрельбы
-    [SerializeField] private float _radius;
-    [SerializeField] private float _distance;
+    [SerializeField] public float _radius;
+                     public float _distance;
 
     [SerializeField] private Rigidbody projectile;
     //скорость стрел
@@ -16,10 +16,11 @@ public class MobTurel : MonoBehaviour
     [SerializeField] private Transform _arrowSpavner;
     [SerializeField] private float _reloadTimer = 30f; //задержка между выстрелами, изменяемое значение
     private float reloadTimer;
+    private Animator _anim;
     void Start()
     {
-        // InvokeRepeating("damagArrow(_radius, _distance)", 0, 5);
         reloadTimer = _reloadTimer;
+        _anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -36,18 +37,21 @@ public class MobTurel : MonoBehaviour
                 if (reloadTimer < 0)
                 {
                     reloadTimer = _reloadTimer;
-                    DamagArrow(_radius, _distance);
+                    _anim.SetBool("DrawArrowMob", true);
+                    Invoke("DamagArrow",0.8f);
+                    // DamagArrow(_radius, _distance);
                 }
             }
         }
     }
 
-    private void DamagArrow(float _radius, float _distance)
+    private void DamagArrow()
     {
         if (_distance < _radius)
         {
-            Rigidbody p = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
-            p.velocity = transform.forward * speedArrow;
+            Rigidbody arrow = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
+            arrow.velocity = transform.forward * speedArrow;
         }
     }
+    
 }

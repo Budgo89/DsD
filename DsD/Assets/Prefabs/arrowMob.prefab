@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2373019969888949781}
   - component: {fileID: 4457992762725524750}
   - component: {fileID: 2457682692447073952}
-  - component: {fileID: -1630936778689050085}
   - component: {fileID: 4892817298872907240}
+  - component: {fileID: -7663970000117365572}
   m_Layer: 0
   m_Name: arrowMob
   m_TagString: Untagged
@@ -132,19 +132,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1630936778689050085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2430698400048936095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a0611c51903d34c8c9d5f1577198c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 1
 --- !u!114 &4892817298872907240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c051f567e7ba7468b71e9fd36f214d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7663970000117365572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430698400048936095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a0611c51903d34c8c9d5f1577198c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1

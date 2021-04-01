@@ -15,9 +15,9 @@ public class Mine : MonoBehaviour
     {
         if (other.gameObject.GetComponent<MyEnemy>())
         {
-            print("Ouch:");
             var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
+            enemy.HP(_damage);
             _min.SetActive(false);
             _explosion.SetActive(true);
             _explosion.GetComponent<StopBoom>().enabled = true;

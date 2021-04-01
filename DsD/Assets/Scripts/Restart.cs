@@ -1,18 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
+    [SerializeField] private GameObject _restert;
+    [SerializeField] private TMP_Text _text;
 
-    // Update is called once per frame
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
-        if (_player == null)
+        var enemy = _player.gameObject.GetComponent<MyEnemy>()._health;
+        if (enemy <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         Invoke("Rect",3);   
         }
+    }
+
+    private void Rect()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+        _restert.SetActive(true);
+        _text.text = "Вы проиграли! \nПопробуйте ещё раз.";
     }
 }

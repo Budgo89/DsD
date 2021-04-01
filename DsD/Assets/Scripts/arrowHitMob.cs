@@ -12,10 +12,9 @@ public class ArrowHitMob : MonoBehaviour
         var enemy = other.GetComponent<MyEnemy>();
         if (enemy != null)
         {
-            print("Урон");
             enemy.Hurt(_damage);
             enemy.HP(_damage);
-            Destroy(gameObject);
+            // Destroy(gameObject);
             gameObject.SetActive(false);
         }
     }

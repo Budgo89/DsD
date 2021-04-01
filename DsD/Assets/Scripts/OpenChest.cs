@@ -16,12 +16,7 @@ public class OpenChest : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<MyEnemy>())
-        {
-
-            var openChest =_animator.GetBool("OpenChest");
             _animator.SetBool("OpenChest", true);
-
-        }
 
     }
 }
