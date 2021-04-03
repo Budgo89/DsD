@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Hint1 : MonoBehaviour
+public class Hint : MonoBehaviour
 {
     [SerializeField] private TMP_Text _hinr;
 

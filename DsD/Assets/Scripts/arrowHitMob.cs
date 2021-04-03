@@ -13,8 +13,6 @@ public class ArrowHitMob : MonoBehaviour
         if (enemy != null)
         {
             enemy.Hurt(_damage);
-            enemy.HP(_damage);
-            // Destroy(gameObject);
             gameObject.SetActive(false);
         }
     }

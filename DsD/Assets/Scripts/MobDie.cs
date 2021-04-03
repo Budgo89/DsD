@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class MobDie : MonoBehaviour
 {
-    [SerializeField]
-    public int _health;
+    [SerializeField] public int _health;
     [SerializeField] private Slider _hp;
     private Animator _animator;
     
@@ -16,7 +15,8 @@ public class MobDie : MonoBehaviour
     }
     public void Hurt(int damage)
     {
-        _health -= damage; ;
+        _health -= damage;
+        _hp.value = _health - damage;
 
         if (_health <= 0)
         {
@@ -29,10 +29,7 @@ public class MobDie : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public void HP(int damage)
-    {
-        _hp.value = _health - damage;
-    }
+
 
 
 }

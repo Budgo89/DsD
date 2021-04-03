@@ -13,8 +13,6 @@ public class MobTurelKilAnim : MonoBehaviour
     {
         var enemy = _mobTurell.gameObject.GetComponent<MobKill>()._health;
         if (enemy <= 0)
-        {
             _mobTurell.GetComponent<MobTurel>().enabled = false;
-        }
     }
 }

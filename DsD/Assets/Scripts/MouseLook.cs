@@ -7,28 +7,19 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     //Выпадающий список для насткоек осей вращения
-    [SerializeField]
-    private enum RotationAxes { MouseXandxY = 0, MouseX = 1, MouseY = 2 };
-    [SerializeField]
-    private RotationAxes axes = RotationAxes.MouseXandxY;
+    [SerializeField] private enum RotationAxes { MouseXandxY = 0, MouseX = 1, MouseY = 2 };
+    [SerializeField] private RotationAxes axes = RotationAxes.MouseXandxY;
     // переменная чувствительности мыши
-    [SerializeField]
-    private float sensitiviryX = 2f;
-    [SerializeField]
-    private float sensitiviryY = 2f;
+    [SerializeField] private float sensitiviryX = 2f;
+    [SerializeField] private float sensitiviryY = 2f;
     // максимальный угол вращения оси X
-    [SerializeField]
-    private float minimumX = -360f;
-    [SerializeField]
-    private float maximumX = 360f;
+    [SerializeField] private float minimumX = -360f;
+    [SerializeField] private float maximumX = 360f;
     // максимальный угол вращения оси Y
-    [SerializeField]
-    private float minimumY = -360f;
-    [SerializeField]
-    private float maximumY = 360f;
+    [SerializeField] private float minimumY = -360f;
+    [SerializeField] private float maximumY = 360f;
     //переменные определяющие текущий угол вращения
-    [SerializeField]
-    private Transform _mobTransform;
+    [SerializeField] private Transform _mobTransform;
 
     float rotationX = 0f;
     float rotationY = 0f;

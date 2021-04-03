@@ -17,6 +17,9 @@ public class ExitMenu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
     }
-
+    private void OnDisable()
+    {
+        _restart.onClick.RemoveAllListeners();
+    }
 
 }

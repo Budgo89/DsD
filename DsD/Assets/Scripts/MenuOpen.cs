@@ -5,7 +5,8 @@ using UnityEngine;
 public class MenuOpen : MonoBehaviour
 {
     [SerializeField] private GameObject _menu;
-    [SerializeField] private GameObject _ControlMenu;
+    [SerializeField] private GameObject _controlMenu;
+    [SerializeField] private GameObject _audioMenu;
     void Start()
     {
         _menu.SetActive(false);
@@ -26,7 +27,8 @@ public class MenuOpen : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && _menu.activeInHierarchy)
         {
-            _ControlMenu.SetActive(false);
+            _audioMenu.SetActive(false);
+            _controlMenu.SetActive(false);
             _menu.SetActive(false);  
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;

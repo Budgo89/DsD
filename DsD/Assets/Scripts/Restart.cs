@@ -18,9 +18,7 @@ public class Restart : MonoBehaviour
     {
         var enemy = _player.gameObject.GetComponent<MyEnemy>()._health;
         if (enemy <= 0)
-        {
-         Invoke("Rect",3);   
-        }
+         Invoke("Rect",3); 
     }
 
     private void Rect()

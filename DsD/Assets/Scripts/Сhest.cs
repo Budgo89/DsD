@@ -17,14 +17,13 @@ public class Сhest : MonoBehaviour
     //лук персонажа
     [SerializeField] private GameObject _bow;
     [SerializeField] private GameObject _player;
-
     [SerializeField] private GameObject _obl;
     [SerializeField] private GameObject _door;
     [SerializeField] private GameObject _bowInterface;
     [SerializeField] private GameObject _bowPlayer;
     [SerializeField] private GameObject _aim;
-    
     [SerializeField] private TMP_Text _hinr;
+    [SerializeField] private AudioSource _audioSource;
     
     private Animator _animator;
     private Animator _animatorDoor;
@@ -33,6 +32,7 @@ public class Сhest : MonoBehaviour
     {
         _animator = _сhest.gameObject.GetComponent<Animator>();
         _animatorDoor = _door.GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -48,6 +48,7 @@ public class Сhest : MonoBehaviour
             _bowInterface.SetActive(true);
             _bowPlayer.SetActive(true);
             _aim.SetActive(true);
+            _audioSource.Play();
         }
     }
 

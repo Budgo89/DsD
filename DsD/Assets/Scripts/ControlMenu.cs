@@ -18,6 +18,10 @@ public class ControlMenu : MonoBehaviour
     private void Next()
     {
         _controlMenu.SetActive(false);
+    }
 
+    private void OnDisable()
+    {
+        _next.onClick.RemoveAllListeners();
     }
 }

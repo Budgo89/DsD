@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class MineSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _mine;
+    [SerializeField] private GameObject _mine;
 
-    [SerializeField]
-    private Transform _pointSpawner;
+    [SerializeField] private Transform _pointSpawner;
 
     void Update()
     {

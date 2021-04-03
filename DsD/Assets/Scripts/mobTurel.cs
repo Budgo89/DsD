@@ -15,12 +15,15 @@ public class MobTurel : MonoBehaviour
     //зона появления стрел
     [SerializeField] private Transform _arrowSpavner;
     [SerializeField] private float _reloadTimer = 30f; //задержка между выстрелами, изменяемое значение
+    [SerializeField] private AudioSource _audioSource;
     private float reloadTimer;
     private Animator _anim;
     void Start()
     {
         reloadTimer = _reloadTimer;
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
     }
 
     void Update()
@@ -51,6 +54,7 @@ public class MobTurel : MonoBehaviour
         {
             Rigidbody arrow = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
             arrow.velocity = transform.forward * speedArrow;
+            _audioSource.Play();
         }
     }
     

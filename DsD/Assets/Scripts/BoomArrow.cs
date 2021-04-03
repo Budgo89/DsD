@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class BoomArrow : MonoBehaviour
 {
-    [SerializeField]
-    public Rigidbody projectile;
-    [SerializeField]
-    public float speed = 4;
-    [SerializeField]
-    public Transform _arrowSpavner;
+    [SerializeField] private Rigidbody projectile;
+    [SerializeField] private float speed = 4;
+    [SerializeField] private Transform _arrowSpavner;
+    [SerializeField] private AudioSource _audioSource;
     private Animator _anim;
 
     public void Awake()
     {
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
     }
 
     public void Update()
@@ -32,5 +32,6 @@ public class BoomArrow : MonoBehaviour
     {
         Rigidbody position = Instantiate(projectile, _arrowSpavner.position, _arrowSpavner.rotation);
         position.velocity = transform.forward * speed;
+        _audioSource.Play();
     }
 }

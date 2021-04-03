@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [SerializeField] 
-    public int _damage;
-    [SerializeField]
-    private GameObject _min;
+    [SerializeField] public int _damage;
+    [SerializeField] private GameObject _min;
+    [SerializeField] private AudioSource _audioSource;
     public GameObject _explosion;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,12 +21,16 @@ public class Mine : MonoBehaviour
         {
             var enemy = other.GetComponent<MyEnemy>();
             enemy.Hurt(_damage);
-            enemy.HP(_damage);
-            _min.SetActive(false);
+            _audioSource.Play();
             _explosion.SetActive(true);
             _explosion.GetComponent<StopBoom>().enabled = true;
-            Destroy(gameObject);
+            Invoke("MinStop", 2f);
         }
+    }
+
+    private void MinStop()
+    {
+        _min.SetActive(false);
     }
 
 }

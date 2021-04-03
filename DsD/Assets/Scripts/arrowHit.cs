@@ -9,13 +9,9 @@ public class ArrowHit : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (GameObject.Find("BowInterface") == true)
-        {
             _damage = 1;
-        }
         else if (GameObject.Find("BISBowInterface") == true)
-        {
             _damage = 3;
-        }
         var enemy = other.GetComponent<MobKill>();
         if (enemy != null)
         {

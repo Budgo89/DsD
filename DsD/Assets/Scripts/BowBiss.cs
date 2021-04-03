@@ -24,7 +24,6 @@ public class BowBiss : MonoBehaviour
             if (_hp._health != 5)
             {
                 _hp.Hurt(_hp._health - 5);
-                _hp.HP(_hp._health - 5);
                 other.gameObject.GetComponent<MyEnemy>()._health = 5;
             }
         }
